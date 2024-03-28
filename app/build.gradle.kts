@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-//    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
+//    alias(libs.plugins.hilt)
 }
 
 android {
@@ -42,7 +42,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.8"
+        kotlinCompilerExtensionVersion = "1.5.11"
     }
     packaging {
         resources {
@@ -53,42 +53,47 @@ android {
 
 dependencies {
 
+    implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.material3)
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.kotlin.coroutines)
+
+
+    // Hilt
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.nagivation)
+
+    // Koin
+    implementation(libs.koin)
+
+    // Retrofit
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
+
+    // Moshi
+    implementation(libs.moshi.converterfactory)
+    implementation(libs.moshi.kotlin)
+
+    // Gson
+    implementation(libs.gson)
+    implementation(libs.gson.converter)
+
+    // Volley
+    implementation(libs.volley)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // Hilt
-//    implementation(libs.hilt)
-//    ksp(libs.hilt.compiler)
-//    implementation(libs.hilt.nagivation)
-
-    // Koin
-//    implementation(libs.koin)
-
-    // Retrofit
-//    implementation(libs.okhttp)
-//    implementation(libs.retrofit)
-
-    // Moshi
-//    implementation(libs.moshi.converterfactory)
-//    implementation(libs.moshi.kotlin)
-
-    // Gson
-//    implementation(libs.gson)
-//    implementation(libs.gson.converter)
-
-    // Volley
-//    implementation(libs.volley)
+    //Testing Tools
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
 }
