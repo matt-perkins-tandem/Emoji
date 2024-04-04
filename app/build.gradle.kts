@@ -1,3 +1,5 @@
+@file:Suppress("UnstableApiUsage")
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -53,6 +55,7 @@ android {
 
 dependencies {
 
+    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -60,35 +63,34 @@ dependencies {
     implementation(libs.androidx.ui)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
-    implementation(platform(libs.androidx.compose.bom))
     implementation(libs.kotlin.coroutines)
 
 
     // Hilt
-    implementation(libs.hilt)
-    ksp(libs.hilt.compiler)
-    implementation(libs.hilt.nagivation)
+//    implementation(libs.hilt)
+//    ksp(libs.hilt.compiler)
+//    implementation(libs.hilt.nagivation)
 
     // Koin
-    implementation(libs.koin)
+//    implementation(libs.koin)
 
     // Retrofit
-    implementation(libs.okhttp)
-    implementation(libs.retrofit)
+//    implementation(libs.okhttp)
+//    implementation(libs.retrofit)
 
     // Moshi
-    implementation(libs.moshi.converterfactory)
-    implementation(libs.moshi.kotlin)
+//    implementation(libs.moshi.converterfactory)
+//    implementation(libs.moshi.kotlin)
 
     // Gson
-    implementation(libs.gson)
-    implementation(libs.gson.converter)
+//    implementation(libs.gson)
+//    implementation(libs.gson.converter)
 
     // Volley
-    implementation(libs.volley)
-
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+//    implementation(libs.volley)
+//
+//    debugImplementation(libs.androidx.ui.tooling)
+//    debugImplementation(libs.androidx.ui.test.manifest)
 
     //Testing Tools
     testImplementation(libs.junit)
