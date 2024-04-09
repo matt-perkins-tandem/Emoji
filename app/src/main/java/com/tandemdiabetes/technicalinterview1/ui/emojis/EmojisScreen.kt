@@ -14,9 +14,11 @@ fun EmojisScreen() {
     // 2 - When the data is retrieved, we should see a list of Emojis. Each item should have the emoji itself and the name of the emoji
 }
 
+
 @Composable
 fun EmojiRow(emoji: Emoji) {
-    //TODO: Use this to when creating the list of emoji's.  Feel free to make it look prettier if you'd like
+    // Use this to when creating the list of emoji's.
+    // Feel free to make it look prettier if you'd like
     Row {
         Column {
             Text(text = emoji.emoji)
