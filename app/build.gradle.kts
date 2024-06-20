@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     alias(libs.plugins.ksp)
-//    alias(libs.plugins.hilt)
+    alias(libs.plugins.hilt)
 }
 
 android {
@@ -67,20 +67,20 @@ dependencies {
 
 
     // Hilt
-//    implementation(libs.hilt)
-//    ksp(libs.hilt.compiler)
-//    implementation(libs.hilt.nagivation)
+    implementation(libs.hilt)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.nagivation)
 
     // Koin
 //    implementation(libs.koin)
 
     // Retrofit
-//    implementation(libs.okhttp)
-//    implementation(libs.retrofit)
+    implementation(libs.okhttp)
+    implementation(libs.retrofit)
 
     // Moshi
-//    implementation(libs.moshi.converterfactory)
-//    implementation(libs.moshi.kotlin)
+    implementation(libs.moshi.converterfactory)
+    implementation(libs.moshi.kotlin)
 
     // Gson
 //    implementation(libs.gson)
