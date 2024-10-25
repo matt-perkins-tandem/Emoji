@@ -1,10 +1,13 @@
 package com.tandemdiabetes.technicalinterview1.ui.emojis
 
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.tandemdiabetes.technicalinterview1.domain.Emoji
 
 @Composable
@@ -20,12 +23,9 @@ fun EmojiRow(emoji: Emoji) {
     // Use this to when creating the list of emoji's.
     // Feel free to make it look prettier if you'd like
     Row {
-        Column {
-            Text(text = emoji.emoji)
-        }
-        Column {
-            Text(text = emoji.name)
-        }
+        Text(text = emoji.character)
+        Spacer(modifier = Modifier.width(4.dp))
+        Text(text = emoji.unicodeName)
     }
 }
 
@@ -33,11 +33,12 @@ fun EmojiRow(emoji: Emoji) {
 @Composable
 fun EmojiRowPreview() {
     val emoji = Emoji(
-        name = "grinning face",
-        category = "smileys and people",
-        group = "face positive",
-        htmlCode = listOf("$#128512;"),
-        unicode = listOf("U+1F600")
+        slug = "grinning-face-with-big-eyes",
+        character = "\ud83d\ude03",
+        unicodeName = "grinning face with big eyes",
+        codePoint = "1F603",
+        group = "smileys-emotion",
+        subGroup = "face-smiling"
     )
     EmojiRow(emoji)
 }

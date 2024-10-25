@@ -1,19 +1,15 @@
 package com.tandemdiabetes.technicalinterview1.domain
 
+
+/**
+ * Use the "character" field to display the emoji
+ * Use the "unicodeName" field to display the name of the emoji
+ */
 data class Emoji(
-    val name: String,
-    val category: String,
+    val slug: String,
+    val character: String,
+    val unicodeName: String,
+    val codePoint: String,
     val group: String,
-    val htmlCode: List<String>,
-    val unicode: List<String>
-) {
-    // Use this function to display the emoji in a Text field
-    val emoji: String
-        get() = StringBuilder()
-            .appendCodePoint(
-                Integer.decode(
-                    unicode[0].replace( "U+" , "0x" )
-                )
-            )
-            .toString()
-}
+    val subGroup: String,
+)
