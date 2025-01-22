@@ -10,3 +10,6 @@
 /deploymentTargetDropDown.xml
 /compiler.xml
 /.name
+/deploymentTargetSelector.xml
+/caches/deviceStreaming.xml
+/runConfigurations.xml
